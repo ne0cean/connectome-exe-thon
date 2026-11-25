@@ -10,10 +10,14 @@ AI 에이전트가 "이게 최저가예요", "사실이에요", "완료했어요
 
 검토용 기본 경로는 가상 공급자입니다. 대회 운영진이 승인된 Liner 키를 별도로 주입한 경우에만, 아래 실행 환경에서 `VERIFIER_PROVIDER=mock`을 `VERIFIER_PROVIDER=liner`로 바꾸어 실제 조회를 평가할 수 있습니다. `LINER_API_KEY`는 스태프가 환경 변수로 주입하며 ZIP이나 로그에 포함하지 않습니다. 실조회는 비용이 발생할 수 있습니다.
 
-Node.js 20+ 만 필요합니다 (외부 패키지 0). 준비 확인이 필요하면 `cd verifier`에서 `npm install --offline --ignore-scripts --no-audit --no-fund`를 선택적으로 실행할 수 있습니다.
+Node.js 20+가 필요합니다. 외부 패키지 설치는 필요하지 않습니다.
+
+- GitHub에서 내려받은 경우: 저장소 최상위 폴더(`connectome-exe-thon`)에서 실행하세요.
+- 별도 제출용 ZIP을 푼 경우: 압축 안의 `verifier` 폴더에서 실행하세요.
+
+아래 명령은 `package.json`이 있는 폴더에서 실행합니다.
 
 ```bash
-cd verifier
 VERIFIER_NO_DOTENV=1 VERIFIER_PROVIDER=mock npm test # 동봉 소스 테스트
 VERIFIER_NO_DOTENV=1 VERIFIER_PROVIDER=mock npm run demo # 가상 데이터 시연
 VERIFIER_NO_DOTENV=1 VERIFIER_PROVIDER=mock node bin/verifier.mjs price "예시 문구" 900 --phase outcome
