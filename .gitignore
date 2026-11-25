@@ -1,0 +1,5 @@
+.env
+.keys/
+data/
+node_modules/
+!bench/data/

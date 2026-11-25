@@ -1,0 +1,14 @@
+{
+  "name": "agent-verifier",
+  "version": "0.1.0",
+  "private": true,
+  "description": "에이전트 검증소 — 에이전트의 주장(최저가·사실·완료)을 위험도별로 검증하고 서명 영수증을 발행한다",
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "bin": { "verifier": "bin/verifier.mjs", "verifier-mcp": "mcp/server.mjs" },
+  "scripts": {
+    "test": "node --test test/",
+    "mcp": "node mcp/server.mjs",
+    "demo": "node demo/shopping.mjs"
+  }
+}
